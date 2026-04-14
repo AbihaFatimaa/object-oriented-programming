@@ -12,7 +12,7 @@ struct Library
 	int noOfBooks;
 	int capacity;
 };
- Library ly;
+
 void initializeLibrary( Library & ly, const int capacity){
 	ly.capacity = capacity;
 	ly.noOfBooks = 0;
