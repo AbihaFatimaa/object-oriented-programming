@@ -28,8 +28,12 @@ class savingAccount:public bankAccount{
 		savingAccount(string s, int a, int b, int i=0):bankAccount(s,a,b){
 			interestRate = i;
 		}
-		int calculateInterest(){
-			return (interestRate*balance)/100;
+		void calculateInterest(){
+			int mir = interestRate/12;
+			int mi = balance*mir;
+			cout<<"interest: "<<mi<<endl;
+			deposit(mi);
+			cout<<"Balance: "<<balance<<endl;
 		}
 };
 class checkingAccount:public bankAccount{
@@ -58,7 +62,7 @@ int main() {
 	ac.deposit(500);
 	ac.withdraw(500);
 	savingAccount sa("abc", 123, 3000, 40);
-	cout<<"interest: "<<sa.calculateInterest();
-	
+//	cout<<"interest: "<<sa.calculateInterest();
+	sa.calculateInterest();
 	return 0;
 	   }
