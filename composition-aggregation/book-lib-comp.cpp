@@ -9,7 +9,7 @@ class book{
 		book(string author ="", string bookName=""){
 			this->author = author;
 			this->bookName = bookName;
-			cout<<"coons book"<<endl;
+			cout<<"cons book"<<endl;
 		}
 		void print (){
 			cout<<"title: "<<bookName<<"	"<<"author: "<<author<<endl;
