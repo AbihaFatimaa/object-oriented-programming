@@ -17,26 +17,16 @@ class B:public A{
 			cout << "Y: " << y << '\n';
 		}
 		void test(){
-			cout << "Test Funciton B Y: " << y << '\n';
-		}
-};
-class C:public A{
-		int y;
-	public:
-		C(int x, int y):A(x){	this -> y = y;		}
-		void show(){ 
-			A::show();
 			cout << "Y: " << y << '\n';
 		}
-		void test(){
-			cout << "Test Funciton C Y: " << y << '\n';
-		}
 };
-
 int main(){
-	A *a = new C(3, 5);
+	A *a = new B(3, 5);
 	a -> show();
-	B *b = (B*) a;
-	b -> test();
+	B *b = dynamic_cast<B*> (a);
+	if (b)
+		b -> test();
+	else
+		cout << "Object is different\n";
 	return 0;
 }
